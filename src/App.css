@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -13,6 +16,32 @@
   }
 }
 
+.Navigation-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Navigation-list {
+  display: "flex";
+  justify-Content: "center";
+  align-Items: "center";
+}
+
+.App-avatar-logo {
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.Todo-button {
+  
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -26,6 +55,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-todo-list {
+  list-style-type: none;
 }
 
 @keyframes App-logo-spin {
