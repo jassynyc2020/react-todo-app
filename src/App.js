@@ -1,6 +1,30 @@
 import React from "react";
 import logo from "./images/logo.jpeg";
+import jassy from "./images/jassy.jpeg";
+import johnny from "./images/johnny.jpeg";
+import madonna from "./images/madonna.jpeg";
 import "./App.css";
+
+const user = [
+  {
+    username: "Jassy",
+    id: 1,
+    avatarImg: "./images/jassy.jpeg",
+    completed: false,
+  },
+  {
+    username: "Johnny",
+    id: 2,
+    avatarImg: "./images/johnny.jpeg",
+    completed: false,
+  },
+  {
+    username: "Madonna",
+    id: 3,
+    avatarImg: "./images/madonna.jpeg",
+    completed: false,
+  },
+];
 
 function App() {
   return (
@@ -16,53 +40,29 @@ function App() {
           <a href="./App.js">Notes</a>
         </li>
       </ul>
-      <img src={logo} className="App-avatar-logo" alt="Avatar-logo" />
+      <img src={jassy} className="user-avatar" alt="user-avatar" />
       <h2>Nisha</h2>
       <h1>To Do Today</h1>
-      <div className="Todo-list">
-        <div>
-          <form className="Todo-button">
-            <button type="submit">Done</button>
-            <input placeholder="Add your To Do here"></input>
-          </form>
-        </div>
+      <div className="user-container">
+        <p>{user.username}</p>
+      </div>
+      <div>
+        <form className="todo-button-container">
+          <button type="submit">Done</button>
+          <input placeholder="Add your To Do here"></input>
+          <button type="submit">Delete</button>
+          <br></br>
+          <button type="submit">Done</button>
+          <input placeholder="Add your To Do here"></input>
+          <button type="submit">Delete</button>
+          <br></br>
+          <button type="submit">Done</button>
+          <input placeholder="Add your To Do here"></input>
+          <button type="submit">Delete</button>
+        </form>
       </div>
     </>
   );
 }
-
-// function AppEdit() {
-//   return (
-//     <>
-//       <ul>
-//         <li>
-//           <a href="">To Do</a>
-//         </li>
-//         <li>
-//           <a href="">Calendar</a>
-//         </li>
-//         <li>
-//           <a href="">Notes</a>
-//         </li>
-//       </ul>
-//       <img src={logo} className="App-avatar-logo" alt="Avatar-logo" />
-//       <h2>Nisha</h2>
-//       <h1>Edit</h1>
-//       <div className="Todo-edit">
-//         <form>
-//           <input placeholder="Title"></input>
-//           <input placeholder="Description"></input>
-//           <input placeholder="Add image"></input>
-//           <button type="submit">Save</button>
-//         </form>
-//       </div>
-//     </>
-//   );
-// }
-
-/* <form className="Todo-button">
-          <button type="submit">Done</button>
-          <input placeholder="Add your To Do here"></input>
-        </form> */
 
 export default App;
