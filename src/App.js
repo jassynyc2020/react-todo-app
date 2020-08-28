@@ -1,64 +1,110 @@
 import React from "react";
-import logo from "./images/logo.jpeg";
 import jassy from "./images/jassy.jpeg";
-import johnny from "./images/johnny.jpeg";
-import madonna from "./images/madonna.jpeg";
 import "./App.css";
 
-const user = [
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+// } from "react-router-dom";
+
+// Install the Styled Components link below - ask for help
+
+// const Button = styled.a`
+//   display: inline-block;
+//   border-radius: 3px;
+//   padding: 0.5rem 0;
+//   margin: 0.5rem 1rem;
+//   width: 11rem;
+//   background: transparent;
+//   color: white;
+//   border: 2px solid white;
+
+//   ${(props) =>
+//     props.primary &&
+//     css`
+//       background: white;
+//       color: black;
+//     `}
+// `;
+
+// render(
+//   <div>
+//     <Button
+//       href="https://github.com/styled-components/styled-components"
+//       target="_blank"
+//       rel="noopener"
+//       primary
+//     >
+//       GitHub
+//     </Button>
+
+//     <Button as={Link} href="/docs">
+//       Documentation
+//     </Button>
+//   </div>
+// );
+
+const todos = [
   {
-    username: "Jassy",
+    todo: "Study react",
     id: 1,
-    avatarImg: "./images/jassy.jpeg",
-    completed: false,
+    todoDone: true,
   },
   {
-    username: "Johnny",
+    todo: "Buy Lotto ticket",
     id: 2,
-    avatarImg: "./images/johnny.jpeg",
-    completed: false,
+    todoDone: true,
   },
   {
-    username: "Madonna",
+    todo: "Buy car",
     id: 3,
-    avatarImg: "./images/madonna.jpeg",
-    completed: false,
+    todoDone: true,
   },
 ];
 
 function App() {
   return (
     <>
-      <ul className="Navigation-container">
-        <li className="Navigation-list">
-          <a href="./App.js"> To Do</a>
-        </li>
-        <li className="Navigation-list">
-          <a href="./App.js">Calendar</a>
-        </li>
-        <li className="Navigation-list">
-          <a href="./App.js">Notes</a>
-        </li>
-      </ul>
-      <img src={jassy} className="user-avatar" alt="user-avatar" />
-      <h2>Nisha</h2>
-      <h1>To Do Today</h1>
-      <div className="user-container">
-        <p>{user.username}</p>
+      <header style={HeaderStyles}>
+        <ul style={NavStyle}>
+          <li style={NavItemStyle}>
+            <a href="./App.js">To Do</a>
+          </li>
+          <li style={NavItemStyle}>
+            <a href="./App.js">Calendar</a>
+          </li>
+          <li style={NavItemStyle}>
+            <a href="./App.js">Notes</a>
+          </li>
+        </ul>
+      </header>
+      <div style={userAvatarContainer}>
+        <img style={avatar} src={jassy} alt="user-avatar" />
+        <h2>Nisha</h2>
+        <h1>To Do Today</h1>
       </div>
-      <div>
-        <form className="todo-button-container">
-          <button type="submit">Done</button>
-          <input placeholder="Add your To Do here"></input>
-          <button type="submit">Delete</button>
-          <br></br>
-          <button type="submit">Done</button>
-          <input placeholder="Add your To Do here"></input>
-          <button type="submit">Delete</button>
-          <br></br>
-          <button type="submit">Done</button>
-          <input placeholder="Add your To Do here"></input>
-          <button type="submit">Delete</button>
+      <div style={todoList}>
+        <ul>
+          {todos.map((todo) => {
+            return (
+              <li style={listItemStyle}>
+                <p>{todo.todo}</p>
+                <input type="checkbox" checked={todo.todoDone} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div style={submitButton}>
+        <form style={AddToDoButton}>
+          <button style={InputDoneButton} type="submit">
+            Done
+          </button>
+          <input style={InputButton} placeholder="Add your To Do here"></input>
+          <button style={InputDeleteButton} type="submit">
+            Delete
+          </button>
         </form>
       </div>
     </>
@@ -66,3 +112,76 @@ function App() {
 }
 
 export default App;
+
+const HeaderStyles = {
+  border: "2px solid blue",
+  backgroundColor: "lightblue",
+  display: "flex",
+  justifyContent: "center",
+};
+
+const NavStyle = {
+  display: "flex",
+  listStyle: "none",
+  fontFamily: "roboto",
+};
+
+const NavItemStyle = {
+  margin: "4em",
+};
+
+const userAvatarContainer = {
+  fontSize: "20px",
+  textAlign: "center",
+  fontFamily: "roboto",
+  backgroundColor: "lightpink",
+  border: "2px solid blue",
+};
+
+const avatar = {
+  margin: "20px",
+  width: "100px",
+  border: "4px solid white",
+};
+
+const todoList = {
+  fontFamily: "roboto",
+  textAlign: "center",
+  border: "2px solid gray",
+  backgroundColor: "lightblue",
+};
+
+const listItemStyle = {
+  listStyle: "none",
+};
+
+const AddToDoButton = {
+  backgroundColor: "fuschia",
+  border: "4px solid fuschia",
+  liststyletype: "circle",
+};
+
+const submitButton = {
+  textAlign: "center",
+};
+
+const InputButton = {
+  border: "1px solid blue",
+  height: "45px",
+  width: "300px",
+  padding: "10px",
+};
+
+const InputDeleteButton = {
+  border: "1px solid blue",
+  height: "45px",
+  width: "50px",
+  padding: "10px",
+};
+
+const InputDoneButton = {
+  border: "1px solid blue",
+  height: "45px",
+  width: "50px",
+  padding: "10px",
+};
