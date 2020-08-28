@@ -69,13 +69,19 @@ function App() {
       <header style={HeaderStyles}>
         <ul style={NavStyle}>
           <li style={NavItemStyle}>
-            <a href="./App.js">To Do</a>
+            <a style={NavLink} href="./App.js">
+              To Do
+            </a>
           </li>
           <li style={NavItemStyle}>
-            <a href="./App.js">Calendar</a>
+            <a style={NavLink} href="./App.js">
+              Calendar
+            </a>
           </li>
           <li style={NavItemStyle}>
-            <a href="./App.js">Notes</a>
+            <a style={NavLink} href="./App.js">
+              Notes
+            </a>
           </li>
         </ul>
       </header>
@@ -114,7 +120,6 @@ function App() {
 export default App;
 
 const HeaderStyles = {
-  border: "2px solid blue",
   backgroundColor: "lightblue",
   display: "flex",
   justifyContent: "center",
@@ -124,30 +129,37 @@ const NavStyle = {
   display: "flex",
   listStyle: "none",
   fontFamily: "roboto",
+  textDecoration: "none",
+  fontSize: "20px",
 };
 
 const NavItemStyle = {
-  margin: "4em",
+  margin: "1.5em",
+};
+
+const NavLink = {
+  textDecoration: "none",
+  color: "darkblue",
 };
 
 const userAvatarContainer = {
   fontSize: "20px",
   textAlign: "center",
-  fontFamily: "roboto",
-  backgroundColor: "lightpink",
-  border: "2px solid blue",
+  fontFamily: "fantasy",
+  color: "white",
+  background: "#ff00de",
 };
 
 const avatar = {
   margin: "20px",
   width: "100px",
-  border: "4px solid white",
+  boxShadow: "10px 5px 5px black",
 };
 
 const todoList = {
   fontFamily: "roboto",
   textAlign: "center",
-  border: "2px solid gray",
+  boxShadow: "10px 5px 5px black",
   backgroundColor: "lightblue",
 };
 
@@ -157,31 +169,32 @@ const listItemStyle = {
 
 const AddToDoButton = {
   backgroundColor: "fuschia",
-  border: "4px solid fuschia",
+  boxShadow: "10px 5px 5px black",
   liststyletype: "circle",
 };
 
 const submitButton = {
   textAlign: "center",
+  boxShadow: "10px 5px 5px black",
 };
 
 const InputButton = {
-  border: "1px solid blue",
+  boxShadow: "10px 5px 5px black",
   height: "45px",
   width: "300px",
   padding: "10px",
 };
 
 const InputDeleteButton = {
-  border: "1px solid blue",
+  boxShadow: "10px 5px 5px black",
   height: "45px",
-  width: "50px",
+  width: "70px",
   padding: "10px",
 };
 
 const InputDoneButton = {
-  border: "1px solid blue",
+  boxShadow: "10px 5px 5px black",
   height: "45px",
-  width: "50px",
+  width: "70px",
   padding: "10px",
 };
