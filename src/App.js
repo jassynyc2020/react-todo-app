@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "./images/jassy.jpeg";
 import "./App.css";
+import Todo from "./components/Todo.js";
+import Navbar from "./components/Navbar.js";
 
 const todos = [
   {
@@ -26,121 +28,90 @@ const user = {
 
 function App() {
   return (
-    <>
-      <header style={navStyle.headerContainer}>
-        <ul style={navStyle.listContainer}>
-          <li style={navStyle.listItems}>
-            <a style={navStyle.listLink} href="./App.js">
-              To Do
-            </a>
-          </li>
-          <li style={navStyle.listItems}>
-            <a style={navStyle.listLink} href="./App.js">
-              Calendar
-            </a>
-          </li>
-          <li style={navStyle.listItems}>
-            <a style={navStyle.listLink} href="./App.js">
-              Notes
-            </a>
-          </li>
-        </ul>
-      </header>
-      <div style={userAvatarContainer.avatarContainer}>
-        <img
-          style={userAvatarContainer.avatarImage}
-          src={user.image}
-          alt="user-avatar"
-        />
-        <h2>{user.name}</h2>
-      </div>
-      <h1 style={listItemStyle.titleList}>To Do Today</h1>
-      <ul style={listItemStyle.listContainer}>
-        {todos.map((todoItem) => (
-          <li style={listItemStyle.listItem}>
-            <input
-              style={listItemStyle.inputTodo}
-              type="checkbox"
-              checked={todoItem.isCompleted}
-            />
-            <span style={listItemStyle.listItemtodo}>{todoItem.todo}</span>
-          </li>
-        ))}
-      </ul>
-      <form style={inputStyle.form}>
-        <button style={inputStyle.doneButton} type="submit">
-          Done
-        </button>
-        <input
-          style={inputStyle.inputButton}
-          placeholder="Add your To Do here"
-        ></input>
-        <button style={inputStyle.deleteButton} type="submit">
-          Delete
-        </button>
-      </form>
-    </>
+      <body>
+        <div style={userAvatarContainer.avatarContainer}>
+          <img
+            style={userAvatarContainer.avatarImage}
+            src={user.image}
+            alt="user-avatar"
+          />
+          <h2>{user.name}</h2>
+        </div>
+        <h1 style={listItemStyle.titleList}>To Do Today</h1>
+        <ul style={listItemStyle.listContainer}>
+          {todos.map((todo) => (
+            <Todo todo={todo} />
+          ))}
+        <li style={listItemStyle.listItem}>
+          <input
+            style={listItemStyle.inputTodo}
+            type="checkbox"
+          />
+        </li>
+       </ul>
+        <form style={inputStyle.form}>
+          <button style={inputStyle.doneButton} type="submit">
+            Done
+          </button>
+          <input
+            style={inputStyle.inputButton}
+            placeholder="Add your To Do here"
+          ></input>
+          <button style={inputStyle.deleteButton} type="submit">
+            Delete
+          </button>
+        </form>
+      </body>
   );
-}
+} 
+
+export default App;
 
 const listItemStyle = {
   listContainer: {
-    textAlign: "flex-start",
+    border: "5px inset lightgray",
+    background: "lightblue",
+    color: "blue",
   },
   titleList: {
     display: "flex",
     justifyContent: "center",
+    padding: "20px",
     fontFamily: "roboto",
+    color: "blue",
     fontSize: "40px",
+    background: "lightblue",
   },
   listItem: {
     display: "flex",
-    justifyContent: "center",
-    padding: "5px",
+    padding: "10px",
+    border: "2px solid blue",
     fontFamily: "roboto",
   },
   inputTodo: {
-    display: "flex",
+    position: "absolute",
+    height: "45px",
+    width: "20px",
   },
-};
-
-const navStyle = {
-  headerContainer: {
-    backgroundColor: "lightblue",
-    display: "flex",
-    justifyContent: "center",
-  },
-  listContainer: {
-    display: "flex",
-    margin: "15px",
+  listItemtodo: {
+    fontSize: "20px",
     padding: "10px",
-  },
-  listItems: {
-    listStyle: "none",
-    fontFamily: "roboto",
-    textDecoration: "none",
-    fontSize: "30px",
-    paddingLeft: "40px",
-  },
-  listLink: {
-    textDecoration: "none",
-    color: "darkblue",
-    display: "flex",
-    justifyContent: "center",
   },
 };
 
 const userAvatarContainer = {
   avatarContainer: {
-    fontSize: "50px",
+    fontSize: "30px",
     textAlign: "center",
     fontFamily: "fantasy",
-    color: "white",
-    background: "#ff00de",
+    color: "",
+    background:
+      "radial-gradient(circle, rgba(238,174,202,1) 66%, rgba(148,187,233,1) 100%)",
+    border: "5px inset lightgray",
   },
   avatarImage: {
-    margin: "20px",
-    width: "150px",
+    margin: "10px",
+    width: "100px",
     boxShadow: "10px 5px 5px black",
     borderRadius: "70px",
   },
@@ -150,18 +121,25 @@ const inputStyle = {
   form: {
     display: "flex",
     justifyContent: "center",
+    padding: "20px",
+    background:
+      "radial-gradient(circle, rgba(238,174,202,1) 66%, rgba(148,187,233,1) 100%)",
   },
   doneButton: {
     boxShadow: "10px 5px 5px black",
     height: "45px",
     width: "70px",
     padding: "10px",
+    background: "lightblue",
+    color: "blue",
   },
   deleteButton: {
     boxShadow: "10px 5px 5x black",
     height: "45px",
     width: "70px",
     padding: "10px",
+    background: "lightblue",
+    color: "blue",
   },
   inputButton: {
     boxShadow: "10px 5px 5px black",
@@ -171,4 +149,41 @@ const inputStyle = {
   },
 };
 
-export default App;
+
+// how to use @media for table and desktop
+// how to design for mobile first using display.flex ect
+// add spin to avatar
+
+/* <div style={userAvatarContainer.avatarContainer}>
+<img
+  style={userAvatarContainer.avatarImage}
+  src={user.image}
+  alt="user-avatar"
+/>
+<h2>{user.name}</h2>
+</div>   */
+//             // checked={todoItem.isCompleted}
+
+/* /* /* <span style={listItemStyle.listItemtodo}>{todoItem.todo}</span>} */ 
+
+
+
+
+//     style={listItemStyle.inputTodo}
+//     type="checkbox"
+//     checked={todoItem.isCompleted}
+//   />
+//   <span style={listItemStyle.listItemtodo}>{todoItem.todo}</span>
+// </li>
+/* <form style={inputStyle.form}>
+<button style={inputStyle.doneButton} type="submit">
+Done
+</button>
+<input
+style={inputStyle.inputButton}
+placeholder="Add your To Do here"
+></input>
+<button style={inputStyle.deleteButton} type="submit">
+Delete
+</button>
+// </form> */

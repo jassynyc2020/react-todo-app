@@ -3,16 +3,16 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-jassy {
-    animation: App-jassy-spin infinite 20s linear;
+  .avatarImage {
+    animation: App-image-spin infinite 20s linear;
   }
 }
 
-.App-jassy {
+/* .App-jassy {
   width: 100px;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -29,7 +29,7 @@
   color: #61dafb;
 }
 
-@keyframes App-jassy-spin {
+@keyframes App-image-spin {
   from {
     transform: rotate(0deg);
   }
@@ -41,4 +41,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background: "radial-gradient(circle, rgba(238,174,202,1) 66%, rgba(148,187,233,1) 100%)";
+}
+body,
+html {
+  background: "radial-gradient(circle, rgba(238,174,202,1) 66%, rgba(148,187,233,1) 100%)";
+}
+@media screen and (min-width: 550px) {
+  body {
+    display: grid;
+  }
+
+}
+@media screen and (min-width: 1000px) {
+  body {
+    display: grid;
+  }
 }
