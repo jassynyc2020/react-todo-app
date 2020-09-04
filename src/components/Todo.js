@@ -17,24 +17,23 @@ const todos = [
     isCompleted: false,
   },
 ];
-
 function Todo(props) {
   return (
     <>
       <ul style={listItemStyle.listContainer}>
-        {todos.map((todo) => (
-          <Todo todo={todo} />
-        ))}
+        <li style={listItemStyle.listItem} >
+          <input type="checkbox" checked={todos.todo} />
+        </li>
       </ul>
-      <li style={listItemStyle.listItem}>
-        <input type="checkbox" />
-      </li>
       <form style={inputStyle.form}>
         <button style={inputStyle.doneButton} type="submit">
           Done
         </button>
         <input
-          style={inputStyle.inputButton}
+          style={inputStyle.inputButton
+            ? listItemStyle.inputTodo
+            : listItemStyle.inputTodoNone}
+          type="text"
           placeholder="Add your To Do here"
         ></input>
         <button style={inputStyle.deleteButton} type="submit">

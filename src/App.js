@@ -28,17 +28,21 @@ const user = {
 
 function App() {
   return (
-      <body>
-        <div style={userAvatarContainer.avatarContainer}>
-          <img
-            style={userAvatarContainer.avatarImage}
-            src={user.image}
-            alt="user-avatar"
-          />
-          <h2>{user.name}</h2>
-        </div>
-        <h1 style={listItemStyle.titleList}>To Do Today</h1>
-        <ul style={listItemStyle.listContainer}>
+    <>
+     
+      <div style={userAvatarContainer.avatarContainer}>
+        <img
+          style={userAvatarContainer.avatarImage}
+          src={user.image}
+          alt="user-avatar"
+        />
+        <h2>{user.name}</h2>
+      </div>
+      <h1 style={listItemStyle.titleList}>To Do Today</h1>
+      {todos.map((todo) => (
+        <Todo todo={todo} />
+      ))}
+      {/* <ul style={listItemStyle.listContainer}>
           {todos.map((todo) => (
             <Todo todo={todo} />
           ))}
@@ -60,10 +64,10 @@ function App() {
           <button style={inputStyle.deleteButton} type="submit">
             Delete
           </button>
-        </form>
-      </body>
+        </form> */}
+    </>
   );
-} 
+}
 
 export default App;
 
@@ -149,7 +153,6 @@ const inputStyle = {
   },
 };
 
-
 // how to use @media for table and desktop
 // how to design for mobile first using display.flex ect
 // add spin to avatar
@@ -164,10 +167,7 @@ const inputStyle = {
 </div>   */
 //             // checked={todoItem.isCompleted}
 
-/* /* /* <span style={listItemStyle.listItemtodo}>{todoItem.todo}</span>} */ 
-
-
-
+/* /* /* <span style={listItemStyle.listItemtodo}>{todoItem.todo}</span>} */
 
 //     style={listItemStyle.inputTodo}
 //     type="checkbox"

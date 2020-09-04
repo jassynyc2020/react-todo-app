@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar(props) {
+function Navbar() {
   return (
     <ul style={navStyle.NavListContainer}>
       <li style={navStyle.listItems}>
