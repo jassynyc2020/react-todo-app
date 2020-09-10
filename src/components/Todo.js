@@ -1,7 +1,7 @@
 import React from "react";
 
 function Todo(props) {
-  return (
+  return (gti 
     <>
       <div style={inputStyle.inputContainer}>
         <input type="checkbox" checked={props.todo.isCompleted} />

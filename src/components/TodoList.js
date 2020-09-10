@@ -1,12 +1,12 @@
 import React from "react";
 import Todo from "./Todo.js";
-import Avatar from "./images/jassy.jpeg";
+import avatar from "../images/jassy.jpeg";
 
 function TodoList({ todos, user }) {
   return (
     <>
       <div style={userAvatarContainer.avatarContainer}>
-        <img src={Avatar} alt="Jassy" style={userAvatarContainer.avatarImage} />
+        <img src={avatar} alt="Jassy" style={userAvatarContainer.avatarImage} />
         <h2>{user.name}</h2>
       </div>
       <h1 style={listItemStyle.titleList}>To Do Today</h1>
