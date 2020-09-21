@@ -1,6 +1,6 @@
 import React from "react";
 
-function Todo(props) {
+function Todo({props}) {
   return (
     <>
       <div style={inputStyle.inputContainer}>

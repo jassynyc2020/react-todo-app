@@ -10,7 +10,6 @@ function TodoList({ todos, user }) {
         <h2>{user.name}</h2>
       </div>
       <h1 style={listItemStyle.titleList}>To Do Today</h1>
-      {/* TODO Fix key here */}
       {todos.map((todo) => (
         <Todo key={todo.id} todo={todo} />
       ))}

@@ -2,20 +2,22 @@ import React from "react";
 import TodoList from "./components/TodoList";
 import Addtodo from "./components/Addtodo";
 import Navbar from "./components/Navbar";
+import shortid from "shortid";
+import Dashboard from "./components/clock/Dashboard";
 
 const todos = [
   {
-    id: 1,
+    id: shortid.generate(),
     text: "Study react",
     isCompleted: true,
   },
   {
-    id: 2,
+    id: shortid.generate(),
     text: "Buy Lotto ticket",
     isCompleted: false,
   },
   {
-    id: 3,
+    id: shortid.generate(),
     text: "Buy car",
     isCompleted: false,
   },
@@ -33,6 +35,11 @@ class App extends React.Component {
         <Navbar />
         <TodoList todos={todos} user={user} />
         <Addtodo />
+        <Dashboard />
+        {/* <input type="text" />
+        <button>Add Todo</button>
+        <button>Clear Complete</button>
+        <div>0 left to do</div> */}
       </>
     );
   }
