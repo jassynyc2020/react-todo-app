@@ -3,6 +3,7 @@ import Image from "./images/jassy.jpeg";
 import "./App.css";
 import Todo from "./components/Todo.js";
 import Navbar from "./components/Navbar.js";
+import Dashboard from "./components/clock/Dashboard";
 
 const todos = [
   {
@@ -29,7 +30,6 @@ const user = {
 function App() {
   return (
     <>
-     
       <div style={userAvatarContainer.avatarContainer}>
         <img
           style={userAvatarContainer.avatarImage}
