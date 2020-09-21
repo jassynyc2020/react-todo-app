@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar(props) {
+function Navbar() {
   return (
     <ul style={navStyle.NavListContainer}>
       <li style={navStyle.listItems}>
@@ -25,10 +25,14 @@ function Navbar(props) {
 export default Navbar;
 
 const navStyle = {
-  headerContainer: {
+  NavListContainer: {
     backgroundColor: "lightblue",
     display: "flex",
     justifyContent: "space-evenly",
+    padding: "10px",
+  },
+  headerContainer: {
+    backgroundColor: "lightblue",
     boxShadow: "10px 5px 5px black",
     border: "5px inset lightgray",
   },
@@ -40,8 +44,7 @@ const navStyle = {
   },
   listLink: {
     textDecoration: "none",
-    color: "darkblue",
+    color: "blue",
     justifyContent: "center",
   },
 };
-
