@@ -25,7 +25,7 @@ function Navbar() {
 export default Navbar;
 
 const navStyle = {
-  headerContainer: {
+  NavListContainer: {
     backgroundColor: "lightblue",
     display: "flex",
     justifyContent: "space-evenly",
@@ -44,4 +44,3 @@ const navStyle = {
     justifyContent: "center",
   },
 };
-

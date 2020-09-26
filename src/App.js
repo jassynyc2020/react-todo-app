@@ -1,11 +1,14 @@
-import React from "react";
+// import React from "react";
 import Image from "./images/jassy.jpeg";
 import "./App.css";
 import Todo from "./components/Todo.js";
 import Navbar from "./components/Navbar.js";
-import Dashboard from "./components/clock/Dashboard";
+import React, { Component } from "react";
+// import Dashboard from "./components/clock/Dashboard";
 
-const todos = [
+class TodoApp extends Component {
+  state = {
+    todo: [
   {
     id: 1,
     todo: "Study react",
@@ -21,13 +24,29 @@ const todos = [
     todo: "Buy car",
     isCompleted: false,
   },
-];
-const user = {
-  name: "Jassy",
-  image: Image,
+],
+newItem: "",
+newItemTodo: "",
+};
+handleNewItemChange = (event) => {
+  this.setState({ newItem: event.target.value });
 };
 
-function App() {
+handleNewItemTypeChange = (event) => {
+  this.setState({ newItemTodo: event.targe.value });
+};
+
+handleNewItem = (event) => {
+  this.setState((state) => {
+    return {
+      todo: [...state.todo, { todo: state.newItem, todo: state.newItemTodo }],
+      newItem: "",
+      newItemTodo: "",
+    };
+  });
+};
+
+render() {
   return (
     <>
       <div style={userAvatarContainer.avatarContainer}>
@@ -41,7 +60,7 @@ function App() {
       <h1 style={listItemStyle.titleList}>To Do Today</h1>
       {todos.map((todo) => (
         <Todo todo={todo} />
-      ))}
+      ))};
       {/* <ul style={listItemStyle.listContainer}>
           {todos.map((todo) => (
             <Todo todo={todo} />

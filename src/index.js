@@ -1,12 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import App from "./App";
-import Dashboard from "./components/clock/Dashboard";
+import App from "./App";
+import Navbar from "./components/Navbar";
+import Todo from "./components/Todo";
+
+// import Dashboard from "./components/clock/Dashboard";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Dashboard />
+    <Navbar />
+    <App />
+    <Todo />
+    {/* <Dashboard /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
