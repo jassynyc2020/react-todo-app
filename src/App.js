@@ -1,9 +1,10 @@
 import React from "react";
+import Todo from "./components/Todo";
 import TodoList from "./components/TodoList";
 import Addtodo from "./components/Addtodo";
 import Navbar from "./components/Navbar";
 import shortid from "shortid";
-import Dashboard from "./components/clock/Dashboard";
+// import Dashboard from "./components/clock/Dashboard";
 
 const todos = [
   {
@@ -35,7 +36,6 @@ class App extends React.Component {
         <Navbar />
         <TodoList todos={todos} user={user} />
         <Addtodo />
-        <Dashboard />
         {/* <input type="text" />
         <button>Add Todo</button>
         <button>Clear Complete</button>

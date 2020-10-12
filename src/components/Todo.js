@@ -1,11 +1,11 @@
 import React from "react";
 
-function Todo({props}) {
+function Todo(props) {
   return (
     <>
       <div style={inputStyle.inputContainer}>
-        <input type="checkbox" checked={props.todo.isCompleted} />
-        <p>{props.todo.text}</p>
+        <input type="checkbox" checked={props.item.isCompleted} />
+        <p>{props.item.text}</p>
         <button style={inputStyle.deleteButton} type="submit">
           Delete
         </button>

@@ -2,16 +2,16 @@ import React from "react";
 import Todo from "./Todo.js";
 import avatar from "../images/jassy.jpeg";
 
-function TodoList({ todos, user }) {
+function TodoList(props) {
   return (
     <>
       <div style={userAvatarContainer.avatarContainer}>
         <img src={avatar} alt="Jassy" style={userAvatarContainer.avatarImage} />
-        <h2>{user.name}</h2>
+        <h2>{props.user.name}</h2>
       </div>
       <h1 style={listItemStyle.titleList}>To Do Today</h1>
-      {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} />
+      {props.todos.map((todo) => (
+        <Todo key={todo.id} item={todo} />
       ))}
     </>
   );
